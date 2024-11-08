@@ -1,8 +1,12 @@
-// Sélectionne le bouton menu et la liste de navigation
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-// Ajoute un événement de clic pour afficher/masquer le menu
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    } else {
+        console.error("L'élément .menu-toggle ou .nav-links est introuvable.");
+    }
 });
