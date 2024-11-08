@@ -59,34 +59,49 @@
   }
   
   /* Styles spécifiques pour les écrans de moins de 768px */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     /* Cache la barre de navigation normale */
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 80px; /* Ajustez cette valeur pour que le menu apparaisse juste sous la barre de navigation */
         right: 0;
         background-color: #fff1bb;
         width: 100%;
         padding: 1rem;
         border-radius: 0 0 15px 15px;
+        z-index: 10; /* Pour garantir que le menu est au-dessus d’autres éléments */
     }
-  
+
     /* Affiche le bouton menu */
     .menu-toggle {
         display: block;
         font-size: 2rem;
         color: #8c52ff;
         cursor: pointer;
+        position: relative; /* Assurez-vous que le bouton se positionne dans la barre de navigation */
     }
-  
+
     /* Affiche les liens lorsque la classe "active" est ajoutée */
     .nav-links.active {
         display: flex;
+        animation: slideDown 0.3s ease-in-out; /* Animation pour une apparition fluide */
     }
-  }
-  
+}
+
+/* Animation de glissement vers le bas */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
