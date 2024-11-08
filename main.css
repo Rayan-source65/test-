@@ -81,7 +81,7 @@
         position: relative;
         width: 100%;
         height: 400px; /* Ajuste la hauteur selon ton besoin */
-        background-image: url('./images/IMG_3583.JPG'); /* Remplace par l'URL de ton image */
+        background-image: url('images/IMG_3583.JPG'); /* Remplace par l'URL de ton image */
         background-size: cover;
         background-position: center;
         overflow: hidden;
