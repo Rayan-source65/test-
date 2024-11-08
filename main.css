@@ -17,54 +17,76 @@
     }
     
 /* barre de navigation */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #fff1bb;
-        padding: 2rem;
-        border-radius: 50px;
-        margin: 1%;
-        margin-top: 1.5%;
-        font-family: "Sour Gummy";
-        
-    }
-
-    .logo img{
-        width: 140px;
-        border-radius: 15px;
-    }
-
+   /* Styles généraux de la barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff1bb;
+    padding: 2rem;
+    border-radius: 50px;
+    margin: 1%;
+    margin-top: 1.5%;
+    font-family: "Sour Gummy";
+  }
+  
+  .logo img {
+    width: 140px;
+    border-radius: 15px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex; /* Par défaut en mode "flex" pour les grands écrans */
+    gap: 5rem;
+  }
+  
+  .nav-links li a {
+    color: #8c52ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #a578fe;
+    text-decoration: underline 0.3s ease;
+  }
+  
+  /* Bouton menu burger masqué par défaut */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Styles spécifiques pour les écrans de moins de 768px */
+  @media (max-width: 768px) {
+    /* Cache la barre de navigation normale */
     .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff1bb;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 15px 15px;
     }
-
-    .nav-links li a {
+  
+    /* Affiche le bouton menu */
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
         color: #8c52ff;
-        text-decoration: none;
-        font-size: 1.5rem;
-        transition: color 0.3s ease;
+        cursor: pointer;
     }
-
-    .nav-links li a:hover {
-        color: #a578fe;
-        text-decoration: underline 0.3s ease;
+  
+    /* Affiche les liens lorsque la classe "active" est ajoutée */
+    .nav-links.active {
+        display: flex;
     }
-
-    .cta .btn {
-        background-color: #00aaff;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .cta .btn:hover {
-        background-color: #007acc;
-    }
+  }
+  
 
 
 
@@ -188,9 +210,6 @@
 /* Footer */
     .pied-de-page{
         background-color: #fff1bb;
-        
-        
-        
     }
     
     .copyright{
